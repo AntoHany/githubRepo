@@ -1,0 +1,146 @@
+:root{
+    --main-color: #ff5722;
+    --second-color: #e91e63;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+
+/* special style */
+.button{
+    padding: 10px;
+    white-space: nowrap;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: #f04c1b;
+}
+
+
+.container
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) 
+{
+    .container
+    {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) 
+{
+    .container
+    {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) 
+{
+    .container
+    {
+        width: 1170px;
+    }
+} 
+
+
+.container h2{
+    font-size: 40px;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #333;
+    white-space: nowrap;
+    position: relative;
+}
+.container h2::before{
+    content: attr(data-fill);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-fill-color: var(--main-color);
+    width: 0;
+    overflow: hidden;
+    transition: .3s;
+}
+.container h2:hover::before{
+    width: 100%;
+}
+
+
+.container form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    margin-bottom: 30px; 
+}
+.container form [type="text"]{
+    flex-basis: 78%;
+    padding: 10px;
+    border: none;
+    border-bottom: var(--main-color) 2px solid;
+    caret-color: var(--main-color);
+    color: var(--main-color);
+    border-radius: 5px;
+}
+.container form [type="text"]:focus{
+    outline: none;
+}
+.container form [type="text"]::placeholder{
+    color: var(--main-color);
+    transition: 0.3s;
+}
+.container form [type="text"]:focus::placeholder{
+    color: transparent;
+}
+.container form [type="submit"]{
+    flex-basis: 20%;
+}
+
+.repos h3{
+    font-size: 30px;
+    text-transform: capitalize;
+    color: var(--second-color);
+    cursor: default;
+}
+.repos .repos-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: -3px 3px 5px #00000042;
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+.repos .repos-list .repo-name{
+    flex-basis: 80%;
+    text-transform: capitalize;
+    color: var(--second-color);
+    font-size: 20px;
+    padding-left: 10px;
+}
+.repos .repos-list .star{
+    background-color: var(--second-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: default;
+    white-space: nowrap;
+    text-align: center;
+    flex-basis: 8%;
+}
+.repos .repos-list button{
+    flex-basis: 8%;
+}
